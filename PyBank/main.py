@@ -3,21 +3,25 @@
 import os
 import csv
 
-# Set cvs Path
-csvpath = os.path.join('..', 'PyBank', 'main.py')
-
-# Set Variables
-total_variables = []
-net_total = []
-
 # Print Title 
 print("Financial Analysis")
 print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ")
 
-# 
-with open(csvpath, 'r', newline='', encoding='utf8') as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
-
-# Define Variables
-    for row in csvreader:
-        total_variables.append(row[1]
+# Read Csv
+with open("Budjet.csv") as f:
+    csvpath = csv.reader(f)
+    
+    # Set Variables
+    total_months = []
+    net_total = []
+   
+   # Define Variables
+    total_months = sum(1 for row in csvpath) - int(1)
+    
+    print(("Total Months:  "), + total_months)
+    
+    net_total = 0
+    for row in csvpath:
+        col = row[2]
+        net_total += int(col)
+    print(("Net Total: "), + net_total)
