@@ -1,4 +1,5 @@
 # Homework Start Up
+# Run Program From PyBank 
 # Import csv and os
 import os
 import csv
@@ -20,8 +21,7 @@ with open("Budjet.csv") as f:
     
     print(("Total Months:  "), + total_months)
     
-    net_total = 0
     for row in csvpath:
-        col = row[2]
-        net_total += int(col)
-    print(("Net Total: "), + net_total)
+        net_total = 0
+        net_total += int(row[2])
+    print(("Net Total: "), net_total)
