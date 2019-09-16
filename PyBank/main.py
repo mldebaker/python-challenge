@@ -1,5 +1,7 @@
 # Homework Start Up
-# Run Program From PyBank 
+
+# RUN PROGRAM FROM PYBANK 
+
 # Import csv and os
 import os
 import csv
@@ -13,7 +15,7 @@ with open("Budjet.csv") as f:
     csvpath = csv.reader(f)
     next(csvpath)
     
-    # Define Variables
+    # Define Total Months
     total_months = sum(1 for row in csvpath)
     print(("Total Months:  "), + total_months)
     
