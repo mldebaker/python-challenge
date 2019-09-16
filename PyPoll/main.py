@@ -6,8 +6,10 @@
 import os
 import csv
 
+# Print Header
 print("Election Results")
 print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
+print(" ")
 
 # Read Csv
 with open("Election.csv") as f:
@@ -15,5 +17,11 @@ with open("Election.csv") as f:
     next(csvpath)
 
     # Define Total Months
-    total_voters = sum(1 for row in csvpath)
-    print(("Total Voters:  "), + total_voters)
+    total_votes = sum(1 for row in csvpath)
+    print(("Total Votes:  "), + total_votes)
+
+    # Header Stuff
+    print(" ")
+    print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
+    print(" ")
+
