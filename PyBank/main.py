@@ -11,7 +11,7 @@ print("Financial Analysis")
 print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ")
 
 # Read Csv
-with open("Budjet.csv") as f:
+with open("Budget.csv") as f:
     csvpath = csv.reader(f)
     next(csvpath)
     
