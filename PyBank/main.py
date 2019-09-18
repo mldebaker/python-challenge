@@ -24,8 +24,20 @@ with open("Budget.csv") as f:
     next(csvpath)
     net_total = 0
    
-    # net_total = 0
+    # Print Total
     for row in csvpath:
         net_total = net_total + int(row[1])
-    print(("Net Total: ") + str(net_total))
+    print(("Total: ") + str(net_total))
 
+        # Print Average Change
+    def mean(values):
+        change = len(values)
+        total_sum = 0
+        for i in range(change):
+            total_sum += values[i]
+        total_sum = sum(values)
+        average = total_sum*1.0/change
+        return average
+    x = row[1]
+    A = mean(x)
+print(A)
