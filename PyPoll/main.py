@@ -21,7 +21,17 @@ with open("Election.csv") as f:
     print(("Total Votes:  "), + total_votes)
 
     # Header Stuff
-    print(" ")
     print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
-    print(" ")
+    
+    # Print List of Candidates
+    for row in csvpath:
+        content = list(row[3])
+    print(content)
 
+    # The percentage of votes each candidate won
+
+    # The total number of votes each candidate won
+
+    # The winner of the election based on popular vote.
+
+    # In addition, your final script should both print the analysis to the terminal and export a text file with the results.
