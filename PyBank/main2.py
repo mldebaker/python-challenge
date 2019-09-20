@@ -32,12 +32,12 @@ with open("Budget.csv") as f:
       data.append(row)
 
     #incase you have a header/title in the first row of your csv file, do the next line else skip it
-    data.pop(0) 
+    # data.pop() 
 
     q1 = []  
 
     for i in range(len(data)):
-      q1.append(int(data[i][your_column_number]))
+      q1.append(int(data[i][2]))
 
     print ('Mean of your_column_number :            ', (np.mean(q1)))
 
