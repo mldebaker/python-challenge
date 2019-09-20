@@ -6,14 +6,16 @@
 import os
 import csv
 
+Budget = os.path.join("Election.csv")
+
 # Print Header
 print("Election Results")
 print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
 print(" ")
 
 # Read Csv
-with open("Election.csv") as f:
-    csvpath = csv.reader(f)
+with open(Budget, 'r') as csvfile:
+    csvpath = csv.file.readlines()
     next(csvpath)
 
     # Define Total Months
@@ -22,11 +24,12 @@ with open("Election.csv") as f:
 
     # Header Stuff
     print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
-    
+    content = []
+    content2=[]
     # Print List of Candidates
     for row in csvpath:
-        content = list(row[3])
-    print(content)
+        row_count =
+    print(content2)
 
     # The percentage of votes each candidate won
 

@@ -1,14 +1,15 @@
-import numpy as np
 import os
 import csv
 
+Budget = os.path.join("Budget.csv")
+data = []
 # Print Title 
 print("Financial Analysis")
 print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ")
 
 # Read Csv
-with open("Budget.csv") as f:
-    csvpath = csv.reader(f)
+with open(Budget, newline="") as csvfile:
+    csvpath = csv.reader(csvfile, delimiter=",")
     next(csvpath)
 
     # Define Total Months
@@ -16,30 +17,28 @@ with open("Budget.csv") as f:
     print(("Total Months:  "), + total_months)
     
     # Set Variables
-    f.seek(0)
+    csvfile.seek(0)
     next(csvpath)
     net_total = 0
-   
-    # Print Total
+    q1 = []
+    previous = 0
+    AVGdifference = 0
+    length = 0
+    
+    # Print Total, avgCHANGE, Greatest Increase, Greatest Decrease
     for row in csvpath:
         net_total = net_total + int(row[1])
+        AVGdifference = int(row[1]) - previous
+        previous = int(row[1])
+        q1.append(AVGdifference)
+        length = len(q1)-1
+    total_average = sum(q1[1:])/length
     print(("Total: ") + str(net_total))
+    print(("Average Change: ") + str(total_average))
+    print(("Greatest Increase in Profits: "), max(q1))
+    print(("Greatest Decrease in Profits: "), min(q1))
 
     # The average of the changes in "Profit/Losses" over the entire period
-    data = []
-
-    for row in csvpath:
-      data.append(row)
-
-    #incase you have a header/title in the first row of your csv file, do the next line else skip it
-    # data.pop() 
-
-    q1 = []  
-
-    for i in range(len(data)):
-      q1.append(int(data[i][2]))
-
-    print ('Mean of your_column_number :            ', (np.mean(q1)))
 
     # The greatest increase in profits (date and amount) over the entire period
 
