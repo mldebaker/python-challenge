@@ -24,6 +24,7 @@ with open(Budget, newline="") as csvfile:
     previous = 0
     AVGdifference = 0
     length = 0
+    GI = []
     
     # Print Total, avgCHANGE, Greatest Increase, Greatest Decrease
     for row in csvpath:
@@ -33,10 +34,17 @@ with open(Budget, newline="") as csvfile:
         q1.append(AVGdifference)
         length = len(q1)-1
     total_average = sum(q1[1:])/length
+    GI.append(row[0])
+    # def sheet(data_combined):
+        # date = str(csvfile)
+    Combine = zip(q1, GI)
+        if y == Combine:
+            print(x = y)
     print(("Total: ") + str(net_total))
     print(("Average Change: ") + str(total_average))
-    print(("Greatest Increase in Profits: "), max(q1))
-    print(("Greatest Decrease in Profits: "), min(q1))
+    print(("Greatest Increase in Profits: "), max(Combine))
+    print(("Greatest Decrease in Profits: "), min(Combine))
+    print(GI)
 
     # The average of the changes in "Profit/Losses" over the entire period
 

@@ -25,7 +25,7 @@ with open(Budget, 'r') as csvfile:
     # Header Stuff
     print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
     content = []
-    content2=[]
+    content2 = []
     # Print List of Candidates
     for row in csvpath:
         row_count =
