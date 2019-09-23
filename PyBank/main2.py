@@ -4,11 +4,9 @@ import csv
 Budget = os.path.join("Budget.csv")
 data = []
 # Print Title 
-print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ")
-print(" ")
 print("Financial Analysis")
 print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ")
-print(" ")
+
 # Read Csv
 with open(Budget, newline="") as csvfile:
     csvpath = csv.reader(csvfile, delimiter=",")
@@ -58,12 +56,13 @@ with open(Budget, newline="") as csvfile:
     #     max_date = months[Date]
     # if num <= Min:
     #     min_date = months[Date]
-    
+
     print(("Total: ") + str(net_total))
     print(("Average Change: ") + str(total_average))
     print(("Greatest Increase in Profits: Feb-2012 "), max(q1))
     print(("Greatest Decrease in Profits: Sep-2013 "), min(q1))
     print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ")
+    
 
     # The average of the changes in "Profit/Losses" over the entire period
 
